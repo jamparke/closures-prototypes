@@ -7,7 +7,12 @@
 // The values for the make and model will come from two parameters, make and model (in that order). 
 
 // Code here
-
+function CarFactory(make, model) {
+  return {
+    make,
+    model
+  }
+}
 
 
 
@@ -20,13 +25,13 @@
 
 
 function Employee(name, email, hireDate) {
-    this.name = name;
-    this.email = email;
-    this.hireDate = hireDate;
+  this.name = name;
+  this.email = email;
+  this.hireDate = hireDate;
 }
 
 // Code here
-
+bob = new Employee('Bob', 'bob@gmail.com', '01-02-98')
 
 
 
@@ -41,19 +46,29 @@ function Employee(name, email, hireDate) {
 // Write a constructor function, including method definitions, which will make the following function invocations function properly.
 
 // Code here
+function Car(make, model, year) {
+  return {
+    make,
+    model,
+    year,
+    move: 0,
+    moveCar: function (move) {
+      return move += 10
+    }
+  }
+}
 
 
 
+//Function Invocations Here
 
-  //Function Invocations Here
+var prius = new Car('Toyota', 'Prius', 2011);
+var mustang = new Car('Ford', 'Mustang', 2013);
 
-  var prius = new Car('Toyota', 'Prius', 2011);
-  var mustang = new Car('Ford', 'Mustang', 2013);
-  
-  //Hint, you'll need to add a move property, with a starting value of zero, and write a moveCar function which will increment the move property by 10. The move property will be added to every object that is being returned from the Car function. You'll also need to use the 'this' keyword properly in order to make sure you're invoking moveCar on the right object (prius vs mustang).
-  
-  prius.moveCar(); //increments prius' move property by 10. Returns the new move property.
-  mustang.moveCar(); //increments mustang' move property by 10. Returns the new move property.
+//Hint, you'll need to add a move property, with a starting value of zero, and write a moveCar function which will increment the move property by 10. The move property will be added to every object that is being returned from the Car function. You'll also need to use the 'this' keyword properly in order to make sure you're invoking moveCar on the right object (prius vs mustang).
+
+prius.moveCar(); //increments prius' move property by 10. Returns the new move property.
+mustang.moveCar(); //increments mustang' move property by 10. Returns the new move property.
 
 
 
